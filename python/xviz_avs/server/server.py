@@ -22,7 +22,7 @@ class XVIZServer:
 
         compression = "deflate" if per_message_deflate else None
         self._serve_options = dict(ws_handler=self.handle_session,
-            host="localhost", port=port, compression=compression)
+            host="0.0.0.0", port=port, compression=compression)
 
     async def handle_session(self, socket, request):
         '''
